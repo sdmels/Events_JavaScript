@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>JavaScript Events</title>
+		<meta charset="utf-8" />	
+		<style type="text/css">
+			ul#grid{list-style: none;padding: 0;margin: 0;}
+			#grid li {display: inline-block;width: 100px;height: 100px;border: 1px solid black; margin: 0 0.5em 0.5em 0;}
+			#grid li span{font: normal 12px Arial;text-align: center;display: inline-block;width: 100%;line-height:100px;}
+
+			.yellow {background-color: yellow}
+			.orange {background-color: orange}	
+			.purple {background-color: purple}	
+			.blue {background-color: blue}	
+			.pink {background-color: pink}	
+			.green {background-color: green}	
+			.cyan {background-color: cyan}	
+			.gold {background-color: gold}	
+			.khaki {background-color: khaki}	
+		</style>	
+	</head>
+	<body>
+		<ul id="grid">
+			<li class="yellow"><span>Yellow</span></li>
+			<li class="orange"><span>Orange</span></li>
+			<li class="purple"><span>Purple</span></li> <br />
+
+			<li class="blue"><span>Blue</span></li>
+			<li class="pink"><span id="pink">Pink</span></li>
+			<li class="green"><span>Green</span></li> <br />
+
+			<li class="cyan"><span>Cyan</span></li>
+			<li class="gold"><span>Gold</span></li>
+			<li class="khaki"><span>Khaki</span></li> <br />
+		</ul>
+
+		<script type="text/javascript">
+			var gridClick = function(e){
+				console.log("UL is clicked");
+			}
+
+			var pinkClick = function(e){
+				console.log(e.toElement.innerHTML);
+			}			
+
+			document.getElementById('grid').addEventListener('click', gridClick,false);											
+			document.getElementById('pink').addEventListener('click', pinkClick,false);
+
+			//document.getElementById('grid').addEventListener('click', gridClick,true);											
+			//document.getElementById('pink').addEventListener('click', pinkClick,true);			
+		</script>
+	</body>
+</html
